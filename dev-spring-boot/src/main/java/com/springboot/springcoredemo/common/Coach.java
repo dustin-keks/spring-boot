@@ -1,4 +1,4 @@
-package com.springboot.util;
+package com.springboot.springcoredemo.common;
 
 public interface Coach {
     String getDailyWorkout();

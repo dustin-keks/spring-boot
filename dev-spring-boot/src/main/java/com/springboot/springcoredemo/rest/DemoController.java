@@ -3,7 +3,7 @@ package com.springboot.springcoredemo.rest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.util.Coach;
+import com.springboot.springcoredemo.common.Coach;
 
 import org.springframework.web.bind.annotation.GetMapping;
 

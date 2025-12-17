@@ -1,7 +1,6 @@
 package com.springboot.springcoredemo.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.springcoredemo.common.Coach;
@@ -15,7 +14,7 @@ public class DemoController {
 
     // Constructor Injection
     @Autowired
-    public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
+    public DemoController(Coach theCoach) {
         myCoach = theCoach;
     }
 

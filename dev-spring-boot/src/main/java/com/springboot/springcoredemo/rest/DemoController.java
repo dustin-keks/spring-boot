@@ -6,9 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.springcoredemo.common.Coach;
 
-import jakarta.annotation.PostConstruct;
-import jakarta.annotation.PreDestroy;
-
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -19,7 +16,7 @@ public class DemoController {
 
     // Constructor Injection
     @Autowired
-    public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
+    public DemoController(@Qualifier("aquatic") Coach theCoach) {
         System.out.println("In constructor: " + getClass().getSimpleName());
         myCoach = theCoach;
     }

@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.springcoredemo.common.Coach;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -13,31 +16,28 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class DemoController {
     // define a private field for the dependency
     private Coach myCoach;
-    private Coach anotherCoach;
 
     // Constructor Injection
     @Autowired
-    public DemoController(@Qualifier("cricketCoach") Coach theCoach,
-                            @Qualifier("cricketCoach") Coach theAnotherCoach) {
+    public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
         System.out.println("In constructor: " + getClass().getSimpleName());
         myCoach = theCoach;
-        anotherCoach = theAnotherCoach;
     }
 
-    // Setter Injection
-    // @Autowired
-    // public void setCoach(Coach theCoach) {
-    //     myCoach = theCoach;
-    // }
+    // define our init method
+    @PostConstruct
+    public void doMyStartupStuff() {
+        System.out.println("In doMyStartupStuff(): " + getClass().getSimpleName());
+    }
+
+    // define our destroy method
+    @PreDestroy
+    public void doMyCleanupStuff() {
+        System.out.println("In doMyCleanupStuff(): " + getClass().getSimpleName());
+    }
 
     @GetMapping("/dailyworkout")
     public String getDailyWorkout() {
         return myCoach.getDailyWorkout();
     }
-    
-    @GetMapping("/check")
-    public String check() {
-        return "Comparing beans: myCoach == anotherCoach, " + (myCoach == anotherCoach);
-    }
-    
 }

@@ -1,12 +1,13 @@
-package com.springboot.springcoredemo;
+package com.springboot.a_spring_boot_overview;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringcoredemoApplication {
+public class MycoolappApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringcoredemoApplication.class, args);
+		SpringApplication.run(MycoolappApplication.class, args);
 	}
+
 }

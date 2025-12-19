@@ -1,4 +1,4 @@
-package com.springboot.mycoolapp.rest;
+package com.springboot.a_spring_boot_overview.rest;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,10 +1,10 @@
-package com.springboot.springcoredemo.rest;
+package com.springboot.b_spring_boot_spring_core.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.springcoredemo.common.Coach;
+import com.springboot.b_spring_boot_spring_core.common.Coach;
 
 import org.springframework.web.bind.annotation.GetMapping;
 

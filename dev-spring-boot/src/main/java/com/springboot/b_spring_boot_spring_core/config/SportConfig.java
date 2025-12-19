@@ -1,10 +1,10 @@
-package com.springboot.springcoredemo.config;
+package com.springboot.b_spring_boot_spring_core.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.springboot.springcoredemo.common.Coach;
-import com.springboot.springcoredemo.common.SwimCoach;
+import com.springboot.b_spring_boot_spring_core.common.Coach;
+import com.springboot.b_spring_boot_spring_core.common.SwimCoach;
 
 @Configuration
 public class SportConfig {

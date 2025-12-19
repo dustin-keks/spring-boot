@@ -1,15 +1,15 @@
-package com.springboot.springcoredemo.common;
+package com.springboot.b_spring_boot_spring_core.common;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class CricketCoach implements Coach {
-    public CricketCoach() {
+public class TennisCoach implements Coach {
+    public TennisCoach() {
         System.out.println("In constructor: " + getClass().getSimpleName());
     }
 
     @Override
     public String getDailyWorkout() {
-        return "Practice fast bowling for 15 minutes! :)";
+        return "Practice your backhand volley.";
     }
 }

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/api")
@@ -34,4 +34,9 @@ public class StudentRestController {
         return theStudents;
     }
     
+    // define endpoint for "/students/{studentId}" - return student at index
+    @GetMapping("/student/{studentId}")
+    public Student getStudent(@PathVariable int studentId) {
+        return theStudents.get(studentId);
+    }
 }

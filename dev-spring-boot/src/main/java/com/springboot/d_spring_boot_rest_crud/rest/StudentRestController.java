@@ -59,7 +59,7 @@ public class StudentRestController {
         error.setMessage(exc.getMessage());
         error.setTimeStamp(System.currentTimeMillis());
 
-        // return ResponseEntitiy
+        // return ResponseEntity
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 
@@ -73,7 +73,7 @@ public class StudentRestController {
         error.setMessage(exc.getMessage());
         error.setTimeStamp(System.currentTimeMillis());
 
-        // return ResponseEntitiy
+        // return ResponseEntity
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 }

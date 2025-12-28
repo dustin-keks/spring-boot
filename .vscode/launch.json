@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CruddemoApplication",
+            "request": "launch",
+            "mainClass": "com.springboot.h_spring_boot_rest_security.CruddemoApplication",
+            "projectName": "mycoolapp"
+        },
+        {
+            "type": "java",
+            "name": "CrudDemoApplication",
+            "request": "launch",
+            "mainClass": "com.springboot.g_spring_boot_rest_crud_employee_spring_data_rest.CrudDemoApplication",
+            "projectName": "mycoolapp",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=59013 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=mycoolapp"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-CrudDemoApplication<mycoolapp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.springboot.h_openapi_swagger_starter_projects_spring_data_jpa.CrudDemoApplication",
+            "projectName": "mycoolapp",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=58983 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=mycoolapp"
+        }
+    ]
+}

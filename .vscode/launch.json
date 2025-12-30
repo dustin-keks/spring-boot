@@ -2,10 +2,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ThymeleafdemoApplication",
+            "request": "launch",
+            "mainClass": "com.springboot.i_thymeleafdemo.ThymeleafdemoApplication",
+            "projectName": "mycoolapp"
+        },
+        {
+            "type": "java",
             "name": "CruddemoApplication",
             "request": "launch",
             "mainClass": "com.springboot.h_spring_boot_rest_security.CruddemoApplication",
-            "projectName": "mycoolapp"
+            "projectName": "mycoolapp",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=65387 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=mycoolapp"
         },
         {
             "type": "java",

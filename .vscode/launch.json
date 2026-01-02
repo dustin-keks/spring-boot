@@ -33,6 +33,16 @@
             "args": "",
             "envFile": "${workspaceFolder}/.env",
             "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=58983 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=mycoolapp"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ValidationdemoApplication<mycoolapp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.springboot.j_validationdemo.ValidationdemoApplication",
+            "projectName": "mycoolapp",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

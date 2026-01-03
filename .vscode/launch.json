@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SecuritydemoApplication",
+            "request": "launch",
+            "mainClass": "com.springboot.l_securitydemo.SecuritydemoApplication",
+            "projectName": "mycoolapp"
+        },
+        {
+            "type": "java",
             "name": "CruddemoApplication",
             "request": "launch",
             "mainClass": "com.springboot.k_cruddemo.CruddemoApplication",

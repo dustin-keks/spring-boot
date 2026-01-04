@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,14 @@
 <body>
     <h1>Company Home Page</h1>
     <hr>
+
     <p>Welcome to the home page!</p>
+    <hr>
+
+    <!-- display user name and role -->
+    <p>User: <span sec:authentication="principal.username"></span></p>
+    <p>Role(s): <span sec:authentication="principal.authorities"></span></p>
+    <hr>
 
     <!-- Add a logout button -->
     <form action="#" th:action="@{/logout}" method="POST">

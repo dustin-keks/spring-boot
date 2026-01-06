@@ -5,6 +5,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import com.springboot.m_cruddemo_advanced.dao.AppDAO;
+import com.springboot.m_cruddemo_advanced.entity.Instructor;
+import com.springboot.m_cruddemo_advanced.entity.InstructorDetail;
+
 @SpringBootApplication
 public class CruddemoApplication {
     public static void main(String[] args) {
@@ -12,9 +16,30 @@ public class CruddemoApplication {
 	}
 
     @Bean
-    public CommandLineRunner commandLineRunner(String[] args) {
+    public CommandLineRunner commandLineRunner(AppDAO appDAO) {
         return runner -> {
-            System.out.println("Hello World");
+            createInstructor(appDAO);
         };
+    }
+
+    private void createInstructor(AppDAO appDAO) {
+        // create the instructor
+        Instructor tempInstructor = new Instructor("Chad", "Derby", "darby@ecample.com");
+
+        // create the instructor detail
+        InstructorDetail tempInstructorDetail = new InstructorDetail("http://www.youtube.com/@example", "coding");
+
+        // associate the objects
+        tempInstructor.setInstructorDetail(tempInstructorDetail);
+
+        // save the instructor
+        //
+        // NOTE: this will ALSO save the details object
+        // because of CascadeType.ALL
+        //
+        System.out.println("Saving instructor: " + tempInstructor);
+        appDAO.save(tempInstructor);
+
+        System.out.println("Done!");
     }
 }

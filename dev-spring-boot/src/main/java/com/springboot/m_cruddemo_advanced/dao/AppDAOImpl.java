@@ -1,12 +1,14 @@
 package com.springboot.m_cruddemo_advanced.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.springboot.m_cruddemo_advanced.entity.Instructor;
 
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 
+@Repository
 public class AppDAOImpl implements AppDAO {
     // define field for entity manager
     private EntityManager entityManager;

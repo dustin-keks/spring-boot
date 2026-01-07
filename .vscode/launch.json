@@ -75,6 +75,16 @@
             "projectName": "mycoolapp",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-CruddemoApplication<mycoolapp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.springboot.o_cruddemo_onetomany.CruddemoApplication",
+            "projectName": "mycoolapp",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

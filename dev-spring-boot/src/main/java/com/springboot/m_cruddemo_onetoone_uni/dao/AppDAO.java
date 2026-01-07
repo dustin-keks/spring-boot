@@ -1,6 +1,6 @@
-package com.springboot.m_cruddemo_advanced.dao;
+package com.springboot.m_cruddemo_onetoone_uni.dao;
 
-import com.springboot.m_cruddemo_advanced.entity.Instructor;
+import com.springboot.m_cruddemo_onetoone_uni.entity.Instructor;
 
 public interface AppDAO {
     void save(Instructor theInstructor);

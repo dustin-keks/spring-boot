@@ -1,13 +1,13 @@
-package com.springboot.m_cruddemo_advanced;
+package com.springboot.m_cruddemo_onetoone_uni;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.springboot.m_cruddemo_advanced.dao.AppDAO;
-import com.springboot.m_cruddemo_advanced.entity.Instructor;
-import com.springboot.m_cruddemo_advanced.entity.InstructorDetail;
+import com.springboot.m_cruddemo_onetoone_uni.dao.AppDAO;
+import com.springboot.m_cruddemo_onetoone_uni.entity.Instructor;
+import com.springboot.m_cruddemo_onetoone_uni.entity.InstructorDetail;
 
 @SpringBootApplication
 public class CruddemoApplication {

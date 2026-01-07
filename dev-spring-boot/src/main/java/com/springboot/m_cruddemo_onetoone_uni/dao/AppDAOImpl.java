@@ -1,9 +1,9 @@
-package com.springboot.m_cruddemo_advanced.dao;
+package com.springboot.m_cruddemo_onetoone_uni.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.springboot.m_cruddemo_advanced.entity.Instructor;
+import com.springboot.m_cruddemo_onetoone_uni.entity.Instructor;
 
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;

@@ -1,4 +1,4 @@
-package com.springboot.m_cruddemo_advanced.entity;
+package com.springboot.m_cruddemo_onetoone_uni.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

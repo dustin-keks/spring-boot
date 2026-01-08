@@ -1,5 +1,8 @@
 package com.springboot.o_cruddemo_onetomany.dao;
 
+import java.util.List;
+
+import com.springboot.o_cruddemo_onetomany.entity.Course;
 import com.springboot.o_cruddemo_onetomany.entity.Instructor;
 import com.springboot.o_cruddemo_onetomany.entity.InstructorDetail;
 
@@ -13,4 +16,6 @@ public interface AppDAO {
     InstructorDetail findInstructorDetailById(int theId);
 
     void deleteInstructorDetailById(int theId);
+
+    List<Course> findCoursesByInstructorId(int theId);
 }

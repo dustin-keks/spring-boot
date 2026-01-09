@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.springboot.q_cruddemo_manytomany.entity.Course;
 import com.springboot.q_cruddemo_manytomany.entity.Instructor;
 import com.springboot.q_cruddemo_manytomany.entity.InstructorDetail;
+import com.springboot.q_cruddemo_manytomany.entity.Student;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
@@ -86,7 +87,7 @@ public class AppDAOImpl implements AppDAO {
     @Override
     public Instructor findInstructorByIdJoinFetch(int theId) {
         // create query
-        TypedQuery<Instructor> query = entityManager.createQuery("SELECT i from Instructor i "
+        TypedQuery<Instructor> query = entityManager.createQuery("SELECT i FROM Instructor i "
                                                                 + "JOIN FETCH i.courses "
                                                                 + "JOIN FETCH i.instructorDetail "
                                                                 + "WHERE i.id = :data", 
@@ -134,7 +135,7 @@ public class AppDAOImpl implements AppDAO {
     @Override
     public Course findCourseAndReviewsByCourseId(int theId) {
         // create query
-        TypedQuery<Course> query = entityManager.createQuery("SELECT c from Course c "
+        TypedQuery<Course> query = entityManager.createQuery("SELECT c FROM Course c "
                                                             + "JOIN FETCH c.reviews "
                                                             + "WHERE c.id = :data",
                                                             Course.class);
@@ -148,7 +149,7 @@ public class AppDAOImpl implements AppDAO {
     @Override
     public Course findCourseAndStudentsByCourseId(int theId) {
         // create query
-        TypedQuery<Course> query = entityManager.createQuery("SELECT c from Course c "
+        TypedQuery<Course> query = entityManager.createQuery("SELECT c FROM Course c "
                                                             + "JOIN FETCH c.students "
                                                             + "WHERE c.id = :data",
                                                             Course.class);
@@ -157,5 +158,19 @@ public class AppDAOImpl implements AppDAO {
         // execute query
         Course course = query.getSingleResult();
         return course;
+    }
+
+    @Override
+    public Student findStudentAndCoursesByStudentId(int theId) {
+        // create query
+        TypedQuery<Student> query = entityManager.createQuery("SELECT s FROM Student s "
+                                                            + "JOIN FETCH s.courses "
+                                                            + "WHERE s.id = :data",
+                                                            Student.class);
+        query.setParameter("data", theId);
+
+        // execute query
+        Student student = query.getSingleResult();
+        return student;
     }
 }

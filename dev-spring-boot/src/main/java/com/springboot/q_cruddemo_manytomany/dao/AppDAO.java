@@ -5,6 +5,7 @@ import java.util.List;
 import com.springboot.q_cruddemo_manytomany.entity.Course;
 import com.springboot.q_cruddemo_manytomany.entity.Instructor;
 import com.springboot.q_cruddemo_manytomany.entity.InstructorDetail;
+import com.springboot.q_cruddemo_manytomany.entity.Student;
 
 public interface AppDAO {
     void save(Instructor theInstructor);
@@ -34,4 +35,6 @@ public interface AppDAO {
     Course findCourseAndReviewsByCourseId(int theId);
 
     Course findCourseAndStudentsByCourseId(int theId);
+
+    Student findStudentAndCoursesByStudentId(int theId);
 }

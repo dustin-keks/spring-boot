@@ -4,6 +4,13 @@
             "type": "java",
             "name": "CruddemoApplication",
             "request": "launch",
+            "mainClass": "com.springboot.p_cruddemo_onetomany_uni.CruddemoApplication",
+            "projectName": "mycoolapp"
+        },
+        {
+            "type": "java",
+            "name": "CruddemoApplication",
+            "request": "launch",
             "mainClass": "com.springboot.m_cruddemo_advanced.CruddemoApplication",
             "projectName": "mycoolapp"
         },

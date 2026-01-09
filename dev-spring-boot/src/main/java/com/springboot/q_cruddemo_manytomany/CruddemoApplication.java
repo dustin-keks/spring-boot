@@ -12,6 +12,7 @@ import com.springboot.q_cruddemo_manytomany.entity.Course;
 import com.springboot.q_cruddemo_manytomany.entity.Instructor;
 import com.springboot.q_cruddemo_manytomany.entity.InstructorDetail;
 import com.springboot.q_cruddemo_manytomany.entity.Review;
+import com.springboot.q_cruddemo_manytomany.entity.Student;
 
 @SpringBootApplication
 public class CruddemoApplication {
@@ -22,8 +23,29 @@ public class CruddemoApplication {
     @Bean
     public CommandLineRunner commandLineRunner(AppDAO appDAO) {
         return runner -> {
-            
+            createCourseAndStudents(appDAO);
         };
+    }
+
+    private void createCourseAndStudents(AppDAO appDAO) {
+        // create a course
+        Course tempCourse = new Course("Pacman - How To Score One Million Points");
+
+        // create the students
+        Student tempStudent1 = new Student("John", "Doe", "john@example.com");
+        Student tempStudent2 = new Student("Mary", "Public", "mary@example.com");
+
+        // add students to the course
+        tempCourse.addStudent(tempStudent1);
+        tempCourse.addStudent(tempStudent2);
+
+        // save the course and associated students
+        System.out.println("Saving the course: " + tempCourse);
+        System.out.println("Saving the students: " + tempCourse.getStudents());
+
+        appDAO.save(tempCourse);
+
+        System.out.println("Done!");
     }
 
     private void deleteCourseAndReviews(AppDAO appDAO) {

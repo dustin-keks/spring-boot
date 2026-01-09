@@ -11,6 +11,7 @@ import com.springboot.p_cruddemo_onetomany_uni.dao.AppDAO;
 import com.springboot.p_cruddemo_onetomany_uni.entity.Course;
 import com.springboot.p_cruddemo_onetomany_uni.entity.Instructor;
 import com.springboot.p_cruddemo_onetomany_uni.entity.InstructorDetail;
+import com.springboot.p_cruddemo_onetomany_uni.entity.Review;
 
 @SpringBootApplication
 public class CruddemoApplication {
@@ -21,8 +22,27 @@ public class CruddemoApplication {
     @Bean
     public CommandLineRunner commandLineRunner(AppDAO appDAO) {
         return runner -> {
-            
+            createCourseAndReviews(appDAO);
         };
+    }
+
+    private void createCourseAndReviews(AppDAO appDAO) {
+        // create a course
+        Course tempCourse = new Course("Pacman - How to Score One Million Points");
+
+        // add some reviews
+        tempCourse.addReview(new Review("Great course ... love it!"));
+        tempCourse.addReview(new Review("Cool course, job well done."));
+        tempCourse.addReview(new Review("What a dumb course, you are an idiot!"));
+
+        // save the course ... and leverage the cascade all
+        System.out.println("Saving the course");
+        System.out.println(tempCourse);
+        System.out.println(tempCourse.getReviews());
+
+        appDAO.save(tempCourse);
+
+        System.out.println("Done!");
     }
 
     private void deleteCourse(AppDAO appDAO) {

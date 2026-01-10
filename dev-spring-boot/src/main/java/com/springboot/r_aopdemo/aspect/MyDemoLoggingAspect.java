@@ -11,7 +11,7 @@ public class MyDemoLoggingAspect {
 
     // let's start with an @Before advice
 
-    @Before("execution(public void addAccount())")
+    @Before("execution(public void com.springboot.r_aopdemo.dao.AccountDAO.addAccount())")
     public void beforeAddAccountAdvice() {
         System.out.println("========== Executing @Before advice on method");
     }

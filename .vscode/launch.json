@@ -106,6 +106,16 @@
             "projectName": "mycoolapp",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AopdemoApplication<mycoolapp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.springboot.s_aopdemo_pointcut_declarations.AopdemoApplication",
+            "projectName": "mycoolapp",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

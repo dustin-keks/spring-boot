@@ -3,6 +3,7 @@ package com.springboot.s_aopdemo_pointcut_declarations.aspect;
 import java.util.List;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
@@ -17,6 +18,15 @@ import com.springboot.s_aopdemo_pointcut_declarations.Account;
 @Component
 @Order(2)
 public class MyDemoLoggingAspect {
+    @After("execution(* com.springboot.s_aopdemo_pointcut_declarations.dao.AccountDAO.findAccounts(..))")
+    public void afterFinallyFindAccountsAdvice(JoinPoint theJoinPoint) {
+        // print out which method we are advising on
+        String method = theJoinPoint.getSignature().toShortString();
+        System.out.println("\n===== Executing @After (finally) on method: " + method + " =====");
+    }
+
+
+
     @AfterThrowing(
             pointcut = "execution(* com.springboot.s_aopdemo_pointcut_declarations.dao.AccountDAO.findAccounts(..))",
             throwing = "theExc")
@@ -29,7 +39,7 @@ public class MyDemoLoggingAspect {
         System.out.println("\n===== The exception is: " + theExc + " =====");
     }
 
-    
+
 
     @AfterReturning(
             pointcut = "execution(* com.springboot.s_aopdemo_pointcut_declarations.dao.AccountDAO.findAccounts(..))",

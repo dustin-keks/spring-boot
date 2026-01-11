@@ -6,6 +6,8 @@ import com.springboot.s_aopdemo_pointcut_declarations.Account;
 
 public interface AccountDAO {
     List<Account> findAccounts();
+
+    List<Account> findAccounts(boolean tripWire);
     
     void addAccount(Account theAccount, boolean vipFlag);
 

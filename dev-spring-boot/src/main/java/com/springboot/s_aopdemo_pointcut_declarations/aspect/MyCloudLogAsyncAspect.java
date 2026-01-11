@@ -11,6 +11,6 @@ import org.springframework.stereotype.Component;
 public class MyCloudLogAsyncAspect {
     @Before("com.springboot.s_aopdemo_pointcut_declarations.aspect.AopExpressions.forDaoPackageNoGetterSetter()")
     public void logToCloudAsync() {
-        System.out.println("========== Logging to Cloud in async fashion");
+        System.out.println("\n========== Logging to Cloud in async fashion ==========");
     }
 }

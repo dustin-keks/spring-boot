@@ -11,6 +11,6 @@ import org.springframework.stereotype.Component;
 public class MyApiAnalyticsAspect {
     @Before("com.springboot.s_aopdemo_pointcut_declarations.aspect.AopExpressions.forDaoPackageNoGetterSetter()")
     public void performApiAnalytics() {
-        System.out.println("========== Performing API analytics");
+        System.out.println("\n========== Performing API analytics ==========");
     }
 }

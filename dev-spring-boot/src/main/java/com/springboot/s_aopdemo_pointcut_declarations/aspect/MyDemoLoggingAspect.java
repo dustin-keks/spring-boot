@@ -27,7 +27,6 @@ public class MyDemoLoggingAspect {
         System.out.println("\n===== Executing @Around on method: " + method + " =====");
 
         // get begin timestamp
-        // long begin = System.currentTimeMillis();
         long begin = System.nanoTime();
 
         // now, let's execute the method
@@ -39,17 +38,15 @@ public class MyDemoLoggingAspect {
             // log the exception
             System.out.println(exc.getMessage());
 
-            // give user a custom message
-            result = "Major accident! But no worries, your private AOP helicopter is on the way!";
+            // rethrow exception
+            throw exc;
         }
 
         // get end timestamp
-        // long end = System.currentTimeMillis();
         long end = System.nanoTime();
 
         // compute duration and display it
         long duration = end - begin;
-        // System.out.println("\n===== Duration: " + duration / 1000.0 + " seconds =====");
         System.out.println("\n===== Duration: " + duration + " nanoseconds =====");
 
         return result;

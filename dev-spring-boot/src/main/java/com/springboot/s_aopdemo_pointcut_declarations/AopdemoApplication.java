@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 
 import com.springboot.s_aopdemo_pointcut_declarations.dao.AccountDAO;
 import com.springboot.s_aopdemo_pointcut_declarations.dao.MembershipDAO;
+import com.springboot.s_aopdemo_pointcut_declarations.service.TrafficFortuneService;
 
 @SpringBootApplication
 public class AopdemoApplication {
@@ -17,13 +18,26 @@ public class AopdemoApplication {
 	}
 
     @Bean
-    public CommandLineRunner commandLineRunner(AccountDAO theAccountDAO, MembershipDAO theMembershipDAO) {
+    public CommandLineRunner commandLineRunner(AccountDAO theAccountDAO, MembershipDAO theMembershipDAO, TrafficFortuneService theTrafficFortuneService) {
         return runner -> {
             // demoTheBeforeAdvice(theAccountDAO, theMembershipDAO);
             // demoTheAfterReturnAdvice(theAccountDAO);
             // demoTheAfterThrowingAdvice(theAccountDAO);
-            demoTheAfterAdvice(theAccountDAO);
+            // demoTheAfterAdvice(theAccountDAO);
+            demoTheAroundAdvice(theTrafficFortuneService);
         };
+    }
+
+    private void demoTheAroundAdvice(TrafficFortuneService theTrafficFortuneService) {
+        System.out.println("\nMain Program: demoTheAroundAdvice");
+
+        System.out.println("Calling getFortune()");
+
+        String data = theTrafficFortuneService.getFortune();
+
+        System.out.println("\nMyfortune is: " + data);
+
+        System.out.println("Finished");
     }
 
     private void demoTheAfterAdvice(AccountDAO theAccountDAO) {

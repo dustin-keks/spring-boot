@@ -37,5 +37,12 @@ public class DemoLoggingAspect {
 
         // display the arguments to the method
 
+        // get the arguments
+        Object[] args = theJoinPoint.getArgs();
+
+        // loop through and display args
+        for (Object tempArg : args) {
+            myLogger.info("===== argument: " + tempArg + " =====");
+        }
     }
 }

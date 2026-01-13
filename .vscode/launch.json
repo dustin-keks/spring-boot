@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ThymeleafdemoApplication",
+            "request": "launch",
+            "mainClass": "com.springboot.t_thymeleafdemo.ThymeleafdemoApplication",
+            "projectName": "mycoolapp"
+        },
+        {
+            "type": "java",
             "name": "AopdemoApplication",
             "request": "launch",
             "mainClass": "com.springboot.r_aopdemo.AopdemoApplication",
